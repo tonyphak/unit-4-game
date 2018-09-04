@@ -12,7 +12,7 @@ function startGame(){
   $(".score").text("Score to Match!: " + targetScore);
   $("#win").text("Wins: " + win);
   $("#loss").text("Losses: " + loss);
-  $("#totalScore").text("Your total score is: " + playerScore);
+  $(".totscore").text("Your total score is: " + playerScore);
 //1b. Create div for each crystal. Will also randomly choose new numbers for the crystals. Maybe use for loop
 for(var i = 0; i < 4; i++){
     var random = Math.floor(Math.random() * 24) + 1;
@@ -35,14 +35,14 @@ startGame();
 $(document).on('click', ".crystal", function(){
     var num = parseInt($(this).attr("crystal-number"));
     playerScore += num;
-    $("#totalScore").text("Your total score is: " + playerScore);
+    $(".totscore").text("Your total score is: " + playerScore);
     console.log(playerScore);
 
 //3a. If player matches score, alert will appear to confirm win. If player goes over, alert will confirm lost
 if(playerScore > targetScore){
 //If lose, lost score will go up by one. Win or lose the game will reset.
       $("#loss").text("Losses: " + loss++);
-      $("#totscore").text("Your total score is: " + playerScore);
+      $(".totscore").text("Your total score is: " + playerScore);
       alert("You Lost!!");
       startGame();
  
@@ -50,7 +50,7 @@ if(playerScore > targetScore){
 else if(playerScore === targetScore){
 //3b. If win, win score will go up by one. Win or lose the game will reset.
     $("#win").text("Wins: " + win++);
-    $("#totscore").text("Your total score is: " + playerScore);
+    $(".totscore").text("Your total score is: " + playerScore);
     alert("You Win!!");   
     startGame();
       
