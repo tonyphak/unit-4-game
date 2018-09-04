@@ -1,0 +1,51 @@
+
+.instruct{
+    width: 33%;
+}
+
+h1{
+    font-size: 45px;
+    width: 33%;
+    padding-bottom: 30px;
+}
+
+.score{
+    width: 33%;
+    font-size: 30px;
+}
+
+.pscore{
+    font-size: 20px;
+    width: 33%;
+    padding-top: 30px;
+}
+.totscore{
+    width: 33%;
+    font-size: 20px;
+    
+}
+
+.crystal{
+    width: 200px;
+    height: 200px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border: solid 1px grey;
+    margin-right: 50px;
+    
+}
+
+.crystals{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+.crystal:hover{
+    cursor: pointer;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    transition: 0.2s;
+}
+
