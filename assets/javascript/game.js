@@ -6,7 +6,8 @@ var playerScore = 0;
 
 //1a. Create function when game start to randomly choose a number and append it to .score or "Score to Match!:" 
 function startGame(){
-    targetScore = Math.floor(Math.random() * 80) + 20; 
+    targetScore = Math.floor(Math.random() * 101) + 19; 
+    console.log("randoms score "+ targetScore);
     playerScore = 0;
   $(".crystals").empty();    
   $(".score").text("Score to Match!: " + targetScore);
@@ -15,15 +16,17 @@ function startGame(){
   $(".totscore").text("Your total score is: " + playerScore);
 //1b. Create div for each crystal. Will also randomly choose new numbers for the crystals. Maybe use for loop
 for(var i = 0; i < 4; i++){
-    var random = Math.floor(Math.random() * 24) + 1;
+    var random = Math.floor(Math.random() * 11) + 1;
     console.log(random);
     var crystal = $("<div>");
     crystal.attr("crystal-number", random);
     crystal.addClass("crystal");
-    //passing images through div using jquery
+ //passing images through div using jquery
     var image = ["assets/images/Crystal 1.png", "assets/images/crystal 2.png", "assets/images/crystal 3.png", "assets/images/crystal 4.png"];
     crystal.css({"background-image":"url('" + image[i] + "')","background-size":"cover"});
-    $(".crystals").append(crystal);
+    crystal.addClass("container, row");
+    $(".crystals").append(crystal); //select the class crystals and append the new var crytsal div that was created using jquery
+    
 }
 }
 
